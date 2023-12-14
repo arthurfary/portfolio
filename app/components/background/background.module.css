@@ -1,0 +1,97 @@
+
+/* main */
+.background{
+    z-index: -1;
+    width: 100vw;
+
+    min-height: 100svh;
+    background-color: #010101;
+    position: absolute;
+}
+
+
+.bgHero{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: visible;
+}
+
+.gridObject{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroSun{
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.heroMountainOne{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.heroMountainTwo, .heroMountainOverlap{
+    grid-row: 3;
+    grid-column: 4;
+}
+
+
+
+/* Befor is prepend in the span, and also ::before is set
+to position absolute, so prepending it with ::before
+makes the gradient overflow appear */
+
+.heroSun::before{
+    content: "";
+    position: absolute;
+    /* background: linear-gradient(to top, transparent 0%, transparent 23%, #fff 23%, #fff); */
+    background-color: #fff;
+    width: 150%;
+    aspect-ratio: 1;
+
+
+    overflow: visible;
+
+    border-radius: 100%;
+
+    box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.2);
+}
+
+.heroMountainOne::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(to bottom left, transparent 0%, transparent 50%, #010101 50%, #010101);
+    width: 200%;
+    height: 200%;
+    overflow: visible;
+}
+
+.heroMountainTwo::before, .heroMountainOverlap::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(to bottom right, transparent 0%, transparent 50%, #010101 50%, #010101);
+    width: 200%;
+    height: 200%;
+    overflow: visible;
+}
+
+.heroMountainOverlap::before{
+    content: "";
+    top: 100%;
+    width: 100%;
+    height: 50%;
+    align-self: baseline;
+    left: -75%;
+    background: #010101;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}

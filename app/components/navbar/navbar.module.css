@@ -1,0 +1,8 @@
+.nav{
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: right;
+
+    font-size: 1rem;
+}
