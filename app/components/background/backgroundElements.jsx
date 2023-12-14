@@ -11,6 +11,7 @@ export default function BackgroundElements() {
             <span className={`${styles.heroMountainTwo} ${styles.gridObject}`}></span>
             
             <span className={`${styles.heroMountainOverlap} ${styles.gridObject}`}></span>
+            <span className={`${styles.heroMountainOverlapTwo} ${styles.gridObject}`}></span>
         </div>
     </div>
     </>

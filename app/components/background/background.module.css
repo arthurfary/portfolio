@@ -1,97 +1,96 @@
-
-/* main */
-.background{
+.background {
     z-index: -1;
     width: 100vw;
-
-    min-height: 100svh;
+    min-height: 100vh;
     background-color: #010101;
     position: absolute;
 }
 
-
-.bgHero{
+.bgHero {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; 
-
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
     width: 100vw;
     height: 100vh;
-
-    overflow: visible;
 }
 
-.gridObject{
+.gridObject {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.heroSun{
+.heroSun, .heroMountainOne, .heroMountainTwo {
     grid-row: 3;
+}
+
+.heroSun {
     grid-column: 3;
 }
 
-.heroMountainOne{
-    grid-row: 3;
+.heroMountainOne {
     grid-column: 2;
 }
 
-.heroMountainTwo, .heroMountainOverlap{
-    grid-row: 3;
+.heroMountainTwo {
     grid-column: 4;
 }
 
+.heroMountainOverlap, .heroMountainOverlapTwo {
+    grid-row: 4;
+    grid-column: 3;
+}
 
-
-/* Befor is prepend in the span, and also ::before is set
-to position absolute, so prepending it with ::before
-makes the gradient overflow appear */
-
-.heroSun::before{
+.heroMountainOne::before, .heroMountainTwo::before, .heroMountainOverlap::before, .heroMountainOverlapTwo::before {
     content: "";
     position: absolute;
-    /* background: linear-gradient(to top, transparent 0%, transparent 23%, #fff 23%, #fff); */
+    width: 500%;
+    overflow: visible;
+}
+
+.heroSun::before {
+    content: "";
+    position: absolute;
     background-color: #fff;
-    width: 150%;
+    width: 125%;
     aspect-ratio: 1;
-
-
     overflow: visible;
-
     border-radius: 100%;
-
-    box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 200px 10px rgba(255, 255, 255, .3);
 }
 
-.heroMountainOne::before{
-    content: "";
-    position: absolute;
-    background: linear-gradient(to bottom left, transparent 0%, transparent 50%, #010101 50%, #010101);
-    width: 200%;
-    height: 200%;
-    overflow: visible;
-}
-
-.heroMountainTwo::before, .heroMountainOverlap::before{
-    content: "";
-    position: absolute;
-    background: linear-gradient(to bottom right, transparent 0%, transparent 50%, #010101 50%, #010101);
-    width: 200%;
-    height: 200%;
-    overflow: visible;
-}
-
-.heroMountainOverlap::before{
-    content: "";
-    top: 100%;
-    width: 100%;
-    height: 50%;
-    align-self: baseline;
-    left: -75%;
+.heroMountainOne::before, .heroMountainTwo::before, .heroMountainOverlap::before, .heroMountainOverlapTwo::before {
     background: #010101;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.heroMountainOne::before {
+    top: -25%;
+    height: 300%;
+    left: -250%;
+    background: linear-gradient(230deg, #111111 0%, #010101 55%);
+}
+
+.heroMountainTwo::before {
+    top: -25%;
+    height: 300%;
+    right: -250%;
+    background: linear-gradient(165deg, #111111 0%, #010101 55%);
+
+}
+
+.heroMountainOverlap::before {
+    top: -15%;
+    left: -125%;
+    width: 400%;
+    height: 250%;
+    background: linear-gradient(165deg, #212121 0%, #010101 65%);
+}
+
+.heroMountainOverlapTwo::before {
+    left: -160%; /* was -150*/
+    top: -35%;
+    width: 350%;
+    height: 250%;
+    background: linear-gradient(190deg, rgb(29, 29, 29) 0%, #010101 60%);
 }
