@@ -1,3 +1,19 @@
+/* .cursor{
+    cursor: url('../public/KRZCursors/krz-unclicked.cur'), default !important;
+}
+
+.startHero{
+    cursor: url('../public/KRZCursors/krz-unclicked.cur'), default !important;
+}
+
+.titleHero p, .titleHero, .titleHero h1 {
+    cursor: url('../public/KRZCursors/krz-unclicked.cur'), default !important;
+}
+
+.buttonHero{
+    cursor: url('../public/KRZCursors/krz-unclicked.cur'), default !important;
+} */
+
 .startHero{
     
     min-height: 100svh;
@@ -14,6 +30,10 @@
     flex-direction: column;
 
     font-size: 1.8rem;
+
+    user-select: none;
+
+    
 }
 
 .titleHero{
@@ -53,7 +73,14 @@
 
     padding: 0.6rem 1rem;
 
-    background-color: rgba(128,128,128,.1);
+    /* background-color: rgba(128,128,128,.1); */
+    background: transparent;
     backdrop-filter: blur(10px);
 }
 
+
+
+.buttonHero:active{
+    /* 20 and 7 center the cursor when hovered */
+    cursor: url('../public/KRZCursors/krz-clicked.cur') 20 7, default !important;
+}

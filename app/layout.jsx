@@ -8,6 +8,7 @@ export const metadata = {
   description: 'Desenvolvedor Full-Stack',
 }
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
