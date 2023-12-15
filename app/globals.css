@@ -30,15 +30,28 @@
 }
 
 
-/* setting the cursor to the shole site, the weid path hack is needed else it doesnt work */
+/* setting the cursor to the whole site, the weird path hack is needed else it doesnt work */
+/* first call load the url to next media, second renders */
+
+/* This is useful in scenarios where your CSS might be served from a different location (like a CDN) than your server. 
+In such cases, the relative path might not correctly point to the location of the .cur file, and hence the absolute path is used.
+
+The browser will use the first cursor that it successfully loads. 
+If it fails to load the cursor from the relative path, it will try to load the cursor from the absolute path. 
+If it fails to load the cursor from both paths, it will use the default cursor. 
+This is why the cursor property is being called twice. 
+It’s a common practice to ensure custom cursors load correctly in different hosting scenarios. */
+
 * {
-    
-    cursor: url(/_next/static/media/krz-unclicked.505d931b.cur), default;
+  cursor: url('../public/KRZCursors/krz-unclicked.cur'), default !important;
+  cursor: url(/_next/static/media/krz-unclicked.505d931b.cur), default !important;
 }
 
 *:active{
+  cursor: url('../public/KRZCursors/krz-clicked.cur'), default !important;
   cursor: url(/_next/static/media/krz-clicked.bfb16141.cur) 20 7, default !important;
 }
+
 
 html,
 body {
