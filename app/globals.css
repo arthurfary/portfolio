@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+  font-family: 'lettergothic';
+  src: url('../public/fonts/lettergothic-regular.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../public/fonts/lettergothic-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+       url(/_next/static/media/lettergothic-regular.11617d76.ttf) format('truetype');
+}  
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -27,13 +34,17 @@
 
   /* font */
   font-family: 'Raleway', sans-serif;
+  
 }
+
+
+
 
 
 /* setting the cursor to the whole site, the weird path hack is needed else it doesnt work */
 /* first call load the url to next media, second renders */
 
-/* This is useful in scenarios where your CSS might be served from a different location (like a CDN) than your server. 
+/* This is useful in scenarios where your CSS might be served from a different location (like a CDN) than server. 
 In such cases, the relative path might not correctly point to the location of the .cur file, and hence the absolute path is used.
 
 The browser will use the first cursor that it successfully loads. 
@@ -56,7 +67,7 @@ It’s a common practice to ensure custom cursors load correctly in different ho
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -73,10 +84,16 @@ a {
   color: inherit;
   text-decoration: none;
   font-size: 1rem;
+
+  font-family: 'lettergothic', sans-serif;
+  font-weight: 100;
 }
 
 p {
   font-size: 1rem;
+  font-family: 'lettergothic', sans-serif;
+  font-weight: 100;
+  
 }
 
 @media (prefers-color-scheme: dark) {

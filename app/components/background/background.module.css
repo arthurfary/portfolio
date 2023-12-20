@@ -1,6 +1,6 @@
 
 .background {
-    z-index: -1;
+    z-index: -10;
     width: 100vw;
     min-height: 100vh;
     background-color: #010101;
@@ -47,6 +47,7 @@
     position: absolute;
     width: 500%;
     overflow: visible;
+    z-index: -5;
 }
 
 .heroSun::before {
@@ -58,6 +59,7 @@
     overflow: visible;
     border-radius: 100%;
     box-shadow: 0px 0px 200px 10px rgba(255, 255, 255, .3);
+    z-index: -5;
 }
 
 .heroMountainOne::before, .heroMountainTwo::before, .heroMountainOverlap::before, .heroMountainOverlapTwo::before {
@@ -92,6 +94,49 @@
     left: -160%; /* was -150*/
     top: -35%;
     width: 350%;
-    height: 250%;
+    height: 275%;
     background: linear-gradient(190deg, rgb(29, 29, 29) 0%, #010101 60%);
+    backdrop-filter: blur(10px);
+}
+
+/* ABOUTME */
+
+.bgAboutMe{
+    width: 100vw;
+    height: 100vh;
+    background-color: #010101;
+
+}
+
+/* Imagine section */
+
+.bgImagine{
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+    /* static pulls back from the pos: relative from .gridObject, might need refactoring */
+}
+/* .bgimage is being set along with .bgHero */
+
+.imagineSun{
+    grid-row: 3;
+}
+
+.imagineSun {
+    grid-column: 3;
+}
+
+
+.imagineSun::before{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 150%;
+    aspect-ratio: 1;
+    overflow: visible;
+    border-radius: 100%;
+    box-shadow: 0px 0px 200px 10px rgba(255, 255, 255, .3);
+    z-index: -5;
 }
