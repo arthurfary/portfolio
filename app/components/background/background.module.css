@@ -47,14 +47,14 @@
     position: absolute;
     width: 500%;
     overflow: visible;
-    z-index: -5;
+    z-index: 2;
 }
 
 .heroSun::before {
     content: "";
     position: absolute;
     background-color: #fff;
-    width: 125%;
+    width: 150%;
     aspect-ratio: 1;
     overflow: visible;
     border-radius: 100%;
@@ -133,10 +133,37 @@
     content: "";
     position: absolute;
     background-color: #fff;
-    width: 150%;
+    width: 10%;
     aspect-ratio: 1;
     overflow: visible;
     border-radius: 100%;
     box-shadow: 0px 0px 200px 10px rgba(255, 255, 255, .3);
     z-index: -5;
+}
+
+.bulb{
+    grid-row: 3;
+    grid-column: 3;
+
+    width: 50%;
+    height: 50%;
+    aspect-ratio: 1;
+
+    filter: drop-shadow(0px 0px 1000px rgba(255, 255, 255, 1));
+    transform: rotate(180deg);
+
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.bulb::after {
+    content: "teste";
+    width: 200%; /* Adjust this value to change the size of the shadow */
+    height: 100%;
+    position: absolute;
+    z-index: -1; /* Ensure the shadow is behind the element */
+    left: -50%; /* Center the shadow behind the element */
+    top: 0;
+    filter: drop-shadow(0px 0px 1000px rgb(255, 0, 0));
 }
