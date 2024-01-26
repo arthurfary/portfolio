@@ -6,8 +6,7 @@ import { motion } from "framer-motion"
 export default function BackgroundElements() {
     function createAnimation(duration) {
         return {
-          key: "test",
-          initial: {opacity: 1, y: 50},
+          initial: {opacity: 1, y: 150},
           whileInView: {opacity: 1, y: 0},
           transition: {ease: "easeOut", duration: duration},
           exit: {opacity: 1, x: -100},
@@ -31,10 +30,9 @@ export default function BackgroundElements() {
 
         </div>
 
-        <div className={styles.bgImagine}>
-            {/* <span className={`${styles.imagineSun} ${styles.gridObject}`}></span>  */}
-            <Image className={`${styles.bulb} ${styles.gridObject}`} src={bulb} />
-        </div>
+        <motion.div {...createAnimation(3)} className={styles.bgImagine}>
+            <span className={`${styles.imagineSun} ${styles.gridObject}`}></span> 
+        </motion.div>
     </div>
     </>
     )

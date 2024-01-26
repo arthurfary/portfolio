@@ -14,18 +14,25 @@ export default function Home() {
       transition: {duration: duration, delay: delay},
     };
   }
+
   
   return (
     <PageLayout>
       <div className={styles.startHero}>
         <motion.div className={styles.titleHero}>
-          <motion.h1 {...createAnimation(2, 0, "y")}>Oi, me chamo</motion.h1>
+          <motion.h1 {...createAnimation(3, 0, "y")}>Oi, me chamo</motion.h1>
           <motion.h1 {...createAnimation(2, 0, "y")}>Arthur</motion.h1>
-          <p>E seja bem vindo ao meu site</p>
-  
-          <a href="" className={styles.buttonHero}>
-            Entrar em Contato
-          </a>
+
+          <motion.div initial={{opacity: 0, y: 100}} whileInView={{opacity: 1, y: 0}} transition={{duration:2}} className={styles.buttonSpace}>
+            <p>E seja bem vindo ao meu site</p>
+          </motion.div>
+
+          <motion.div initial={{opacity: 0, y: 100}} whileInView={{opacity: 1, y: 0}} transition={{duration:2}}>
+            <a href="" className={styles.buttonHero}>
+              Entrar em Contato
+            </a>
+          </motion.div>
+
         </motion.div>
       </div>
   
@@ -55,12 +62,12 @@ export default function Home() {
         </motion.div>
       </div>
   
-      <div className={styles.imagine}>  
-        <h1>Você imagina, Eu construo!</h1>
+      <motion.div {...createAnimation(2, 0, "y", 50)} className={styles.imagine}>  
+        <motion.h1 {...createAnimation(2, 0, "y", 100)} >Você imagina, Eu construo!</motion.h1>
   
         {/* BIG SUN WITH LAKE HERE, TALKING ABOUT HOW YOU DREAM AND I BUILD, MAYBE THE SCENE FROM KRO WERE THE METEOR LANDS */}
   
-      </div>
+      </motion.div>
     </PageLayout>
   )
 }
