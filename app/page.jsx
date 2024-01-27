@@ -5,6 +5,10 @@ import styles from './page.module.css'
 import PageLayout from './pageLayout'
 import { motion } from "framer-motion"
 
+
+import apaWebsite from "@/public/images/apawebsite.png"
+import sapo from "@/public/images/sapo.png"
+
 export default function Home() {
 
   function createAnimation(duration, delay, direction = "x", startFrom = -100) {
@@ -14,7 +18,6 @@ export default function Home() {
       transition: {duration: duration, delay: delay},
     };
   }
-
   
   return (
     <PageLayout>
@@ -65,7 +68,26 @@ export default function Home() {
       <motion.div {...createAnimation(2, 0, "y", 50)} className={styles.imagine}>  
         <motion.h1 {...createAnimation(2, 0, "y", 100)} >Você imagina, Eu construo!</motion.h1>
   
-        {/* BIG SUN WITH LAKE HERE, TALKING ABOUT HOW YOU DREAM AND I BUILD, MAYBE THE SCENE FROM KRO WERE THE METEOR LANDS */}
+        <motion.div {...createAnimation(2, 0, "x", -200)} whileHover={{scale: 1.02}} className={styles.linkImage}>
+          <a href="">
+            <Image  src={apaWebsite} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
+          </a>
+        </motion.div>
+
+        <motion.div {...createAnimation(2, 0, "x", -200)} className={styles.linkText}>
+          <h3>Website Associação Protetora dos Animas - São Bento do Sul</h3>
+          <p>Website Associação Protetora dos Animas - São Bento do Sul</p>
+        </motion.div>
+
+        <motion.div {...createAnimation(2, 0, "x", 200)}  whileHover={{scale: 1.02}}  className={styles.linkImage}>
+          <Image  src={sapo} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
+        </motion.div>
+
+        <motion.div {...createAnimation(2, 0, "x", 200)} className={styles.linkText}>
+          <h3>Sistema Planilhas para Prefeitura de Sorocaba</h3>
+          <p>O sapo não lava o pé</p>
+        </motion.div>
+
   
       </motion.div>
     </PageLayout>

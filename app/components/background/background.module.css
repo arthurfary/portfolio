@@ -123,7 +123,7 @@
 /* .bgimage is being set along with .bgHero */
 
 /* .imagineSun {
-    grid-column: 5;
+    grid-column: 1;
     grid-row: 5;
 }
 
@@ -132,10 +132,10 @@
     content: "";
     position: absolute;
     background-color: rgba(255, 255, 255, 255);
-    width: 100%;
+    width: 50%;
     aspect-ratio: 1;
     overflow: visible;
     border-radius: 100%;
-    box-shadow: 0px 0px 200px 20px rgba(255, 255, 255, .2);
+    box-shadow: 0px 0px 200px 200px rgba(255, 255, 255, .2);
     z-index: 0;
 } */
