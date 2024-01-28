@@ -168,19 +168,19 @@
 .linkImage{
   
 
-    border: 1px solid rgba(100, 100, 100, .1);
-    background-color: rgba(100, 100, 100, .02);
+    /* border: 1px solid rgba(100, 100, 100, .1); */
+    /* background-color: rgba(100, 100, 100, .02); */
     border-radius: 20px;
 
     text-align: start;
     height: 100%;
 
-    filter: grayscale(100%) contrast(90%);
-    transition: filter .5s ease;
+    /* filter: grayscale(100%) contrast(90%);
+    transition: filter .5s ease; */
 }
 
 .linkImage:hover{
-    filter: grayscale(0) contrast(1);
+    /* filter: grayscale(0) contrast(1); */
 }
 
 
