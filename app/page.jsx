@@ -18,6 +18,32 @@ export default function Home() {
       transition: {duration: duration, delay: delay},
     };
   }
+
+  function TextCard({title, children}) {
+    return (
+      <motion.div {...createAnimation(1, 0)} className={styles.textCard}>
+        <h1>{title}</h1>
+        {children}
+      </motion.div>
+    );
+  }
+
+  function ImageLink({src, title, description, startx = -200}) {
+    return (
+      <>
+        <motion.div {...createAnimation(2, 0, "x", startx)} whileHover={{scale: 1.02}} className={styles.linkImage}>
+          <a href="">
+            <Image src={src} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
+          </a>
+        </motion.div>
+  
+        <motion.div {...createAnimation(2, 0, "x", startx)} className={styles.linkText}>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </motion.div>
+      </>
+    );
+  }
   
   return (
     <PageLayout>
@@ -40,55 +66,48 @@ export default function Home() {
       </div>
   
       <div className={styles.aboutMe}>
-        <motion.div {...createAnimation(1, 0)} className={styles.textCard}>
-          <h1>Programador Full-Stack</h1>
-        </motion.div>
-  
-        <motion.div {...createAnimation(1, 0)} className={styles.textCard}>
-          <h1>JavaScript</h1>
+        <TextCard title="Programador Full-Stack" />
+
+        <TextCard title="JavaScript">
           <motion.p {...createAnimation(1, 0.2)}>NextJS React - NodeJS - Router - APIs - JSX</motion.p>
-        </motion.div>
-  
-        <motion.div {...createAnimation(1, 0)} className={styles.textCard}>
-          <h1>Python</h1>
+        </TextCard>
+          
+        <TextCard title="Python">
           <motion.p {...createAnimation(1, 0.2)}>Pandas - Selenium - Discord - SQLite3</motion.p>
-        </motion.div>
+        </TextCard>
   
-        <motion.div {...createAnimation(1, 0)} className={styles.textCard}>
+        <TextCard>
           <motion.p {...createAnimation(1, 0.2)}>I also know a bit of</motion.p>
           <h2>C; C#; C++; PHP; LUA</h2>
-        </motion.div>
+        </TextCard>
   
-        <motion.div {...createAnimation(1, 0)} className={styles.textCard}>
+        <TextCard>
           <motion.p {...createAnimation(1, 0.2)}>And I pride myself with</motion.p>
           <h2>Clean Code; OOP</h2>
-        </motion.div>
+        </TextCard>
+
       </div>
   
       <motion.div {...createAnimation(2, 0, "y", 50)} className={styles.imagine}>  
         <motion.h1 {...createAnimation(2, 0, "y", 100)} >Você imagina, Eu construo!</motion.h1>
   
-        <motion.div {...createAnimation(2, 0, "x", -200)} whileHover={{scale: 1.02}} className={styles.linkImage}>
-          <a href="">
-            <Image  src={apaWebsite} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
-          </a>
-        </motion.div>
+        <ImageLink 
+          src={apaWebsite} 
+          title="Website Associação Protetora dos Animas - São Bento do Sul" 
+          description="Website Associação Protetora dos Animas - São Bento do Sul" 
+        />
 
-        <motion.div {...createAnimation(2, 0, "x", -200)} className={styles.linkText}>
-          <h3>Website Associação Protetora dos Animas - São Bento do Sul</h3>
-          <p>Website Associação Protetora dos Animas - São Bento do Sul</p>
-        </motion.div>
+        <ImageLink 
+          src={sapo} 
+          title="Sistema Planilhas para Prefeitura de Sorocaba" 
+          description="O sapo não lava o pé" 
+          startx={200}
+        />
 
-        <motion.div {...createAnimation(2, 0, "x", 200)}  whileHover={{scale: 1.02}}  className={styles.linkImage}>
-          <Image  src={sapo} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
-        </motion.div>
+      </motion.div>
 
-        <motion.div {...createAnimation(2, 0, "x", 200)} className={styles.linkText}>
-          <h3>Sistema Planilhas para Prefeitura de Sorocaba</h3>
-          <p>O sapo não lava o pé</p>
-        </motion.div>
-
-  
+      <motion.div>
+        <motion.h1 {...createAnimation(2, 0, "y", -10)} >Vamos fazer acontecer?</motion.h1>
       </motion.div>
     </PageLayout>
   )
