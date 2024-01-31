@@ -5,12 +5,10 @@ import styles from './page.module.css'
 import PageLayout from './pageLayout'
 import { motion } from "framer-motion"
 
-
 import apaWebsite from "@/public/images/apawebsite.png"
 import sapo from "@/public/images/sapo.png"
 
-import { useState, useEffect } from 'react'
-import { getRepos } from './functions/getRepos'
+import GithubRepos from './components/githubRepos/githubRepos'
 
 export default function Home() {
 
@@ -48,28 +46,6 @@ export default function Home() {
     );
   }
 
-  // api
-  const [repos, setRepos] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchRepos = async () => {
-      try {
-        setIsLoading(true);
-        const data = await getRepos();
-        setRepos(data);
-      } catch (error) {
-        console.error(error);
-      }
-      finally{
-        setIsLoading(false)
-      }
-    };
-  
-    fetchRepos();
-  }, []);
-
-  
   return (
     <PageLayout>
       <div className={styles.startHero}>
@@ -134,17 +110,9 @@ export default function Home() {
       <motion.div>
         <motion.h1 {...createAnimation(2, 0, "y", -10)} >Vamos fazer acontecer?</motion.h1>
       </motion.div>
-      {isLoading && (
-        <p>Carregando...</p>
-      )}
-      {repos && repos?.length > 0 &&
-        repos.map((repo, i) => (
-          <div>
-            <p key={i}>{repo.name}</p>
-            <a href={repo.html_url}>{repo.html_url}</a> 
-          </div>
-        ))
-      }
+
+      <GithubRepos/>
+
     </PageLayout>
   )
 }
