@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { getRepos } from '@/app/functions/getRepos'
 
+import styles from "./repos.module.css"
+
 export default function GithubRepos() {
   const [repos, setRepos] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -27,15 +29,17 @@ export default function GithubRepos() {
   }
 
   return (
-    <>
+    <div className={styles.ghrepos}>
       {repos && repos?.length > 0 &&
         repos.map((repo, i) => (
           <div key={i}>
-            <p>{repo.name}</p>
-            <a href={repo.html_url}>{repo.html_url}</a> 
+            <a href={repo.repo} target='_blank'>
+              <h4>{repo.name}:</h4>
+            </a> 
+            <p>&nbsp;{repo.description.length ? repo.description : "Sem descrição."}</p>
           </div>
         ))
       }
-    </>
+    </div>
   )
 }
