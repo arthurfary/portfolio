@@ -32,16 +32,16 @@ export default function Home() {
   function ImageLink({src, title, description, startx = -200}) {
     return (
       <>
-        <motion.div {...createAnimation(2, 0, "x", startx)} whileHover={{scale: 1.02}} className={styles.linkImage}>
+        <div className={styles.linkImage}>
           <a href="">
             <Image src={src} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
           </a>
-        </motion.div>
+        </div>
   
-        <motion.div {...createAnimation(2, 0, "x", startx)} className={styles.linkText}>
+        <div className={styles.linkText}>
           <h3>{title}</h3>
           <p>{description}</p>
-        </motion.div>
+        </div>
       </>
     );
   }
@@ -90,7 +90,7 @@ export default function Home() {
       </div>
   
       <motion.div {...createAnimation(2, 0, "y", 50)} className={styles.imagine}>  
-        <motion.h1 {...createAnimation(2, 0, "y", 100)} >Você imagina, Eu construo!</motion.h1>
+        <h1 >Você imagina, Eu construo!</h1>
   
         <ImageLink 
           src={apaWebsite} 
@@ -102,16 +102,17 @@ export default function Home() {
           src={sapo} 
           title="Sistema Planilhas para Prefeitura de Sorocaba" 
           description="O sapo não lava o pé" 
-          startx={200}
         />
 
       </motion.div>
 
       <motion.div>
-        <motion.h1 {...createAnimation(2, 0, "y", -10)} >Vamos fazer acontecer?</motion.h1>
+        <motion.h1 {...createAnimation(2, 0, "y", -10)} >Conheça mais alguns dos meus projetos no meu GitHub</motion.h1>
       </motion.div>
 
       <GithubRepos/>
+
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     </PageLayout>
   )

@@ -1,5 +1,7 @@
 export async function getRepos() {
-    const response = await fetch("https://gh-pinned-repos-api.ysnirix.xyz/api/get/?username=arthurfary");
-    const data = await response.json();
-    return data.response
+    const response = await fetch("/api/github");
+    const data = await response.json(); 
+
+    console.log(data);
+    return data.data;
 }

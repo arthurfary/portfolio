@@ -1,28 +1,72 @@
-.ghrepos{
-    display: flex;
+.ghreposcontainer{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+.ghrepos{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  background: var(--light-grad-pink-blue, radial-gradient(ellipse at 40% 0%, #bf398910 0, transparent 75%), radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%));
+  border: 1px solid rgba(100, 100, 100, .2);
+
+  width: 70%;
+  padding-block: 1em;
+  height: 100%;
+
+  gap: 1em;
+  border-radius: 20px;
+  
 
 }
 
+/* underliine hover animation */
 .ghrepos a {
+    --underline-size: 3px;
+
     background: 
       linear-gradient(to right, rgba(100, 100, 100, 0), rgba(100, 100, 100, 0)),
       linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
-    background-size: 100% 0.1em, 0 0.1em;
+    background-size: 100% var(--underline-size), 0 var(--underline-size);
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 400ms;
+
+    display: flex;
+    flex-direction: row;
   }
   
 .ghrepos a:hover,
 .ghrepos a:focus {
-background-size: 0 0.1em, 100% 0.1em;
+background-size: 0 var(--underline-size), 100% var(--underline-size);
+}
+/* end of animation */
+
+.ghrepos img{
+  aspect-ratio: 1;
+  height: clamp(5rem, 8rem, 15rem);
+  border-radius: 9999px;
+  align-self: center;
 }
 
 .ghrepos div{
     display: flex;
+    height: 100%;
+}
+
+
+.repoDiv{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: space-around;
+  align-content: space-around;
+  height: 100%;
 }
