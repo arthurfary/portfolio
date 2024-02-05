@@ -110,7 +110,9 @@ export default function Home() {
         <motion.h1 {...createAnimation(2, 0, "y", -10)} >Conheça mais alguns dos meus projetos no meu GitHub</motion.h1>
       </motion.div>
 
-      <GithubRepos/>
+      <div className={styles.ghRepos}>
+      <GithubRepos />
+      </div>
 
       <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
