@@ -1,5 +1,6 @@
 import Navbar from "./components/navbar/navbar"
 import BackgroundElements from "./components/background/backgroundElements"
+import Footer from "./components/footer/footer"
 
 export default function PageLayout({children}) {
 
@@ -10,6 +11,7 @@ export default function PageLayout({children}) {
 
         <Navbar />
         {children}
+        <Footer/>
     </>
 
     )
