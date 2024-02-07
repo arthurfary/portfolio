@@ -1,0 +1,32 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 1em;
+}
+
+.footer > p{
+    letter-spacing: -1px;
+}
+
+.footer > section{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.footer > nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a {
+    gap: 2em;
+}
