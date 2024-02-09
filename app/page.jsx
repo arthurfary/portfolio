@@ -114,12 +114,6 @@ export default function Home() {
         <GithubRepos />
       </div>
 
-      <br /><br /><br /><br /><br /><br /><br />
-      
-      
-      
-      
-
     </PageLayout>
   )
 }
