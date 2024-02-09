@@ -21,12 +21,14 @@
     gap: 1em;
 }
 
-.footer > nav {
+.footer nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1em;
 }
 
 .footer a {
-    gap: 2em;
+    gap: 1em;
 }
+
