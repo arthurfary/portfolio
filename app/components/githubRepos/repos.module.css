@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   background: var(--light-grad-pink-blue, radial-gradient(ellipse at 40% 0%, #bf398910 0, transparent 75%), radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%));
   border: 1px solid rgba(100, 100, 100, .2);
-  width: 70%;
+  width: 90%;
   padding-block: 1em;
   height: 100%;
   gap: 1em;

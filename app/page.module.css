@@ -102,7 +102,7 @@
 
 .aboutMe{
     width: 100vw;
-    height: 100svh;
+    height: fit-content;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
