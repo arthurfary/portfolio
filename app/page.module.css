@@ -14,6 +14,8 @@
     cursor: url('../public/KRZCursors/krz-unclicked.cur'), default !important;
 } */
 
+
+
 .startHero{
     
     min-height: 100svh;
@@ -102,15 +104,17 @@
 
 .aboutMe{
     width: 100vw;
-    height: fit-content;
+    /* height: fit-content; */
+
+    height: 100vh;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
-    font-size: 2rem;
+    font-size: 1.8rem;
     mix-blend-mode: difference;
     
 }
@@ -143,11 +147,11 @@
 
     text-align: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     align-items: center;
 
     border: 1px solid rgba(100, 100, 100, .2);
-    background-color: rgba(100, 100, 100, .06);
+    /* background-color: rgba(100, 100, 100, .06); */
     border-radius: 20px;
 
     backdrop-filter: blur(50px);
@@ -166,8 +170,6 @@
 
 
 .linkImage{
-    border-radius: 20px;
-
     text-align: start;
     height: 100%;
 

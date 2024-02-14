@@ -34,7 +34,7 @@ export default function Home() {
       <>
         <div className={styles.linkImage}>
           <a href="">
-            <Image src={src} style={{objectFit: "cover", width: '100%', height: "100%", borderRadius: "20px"}}/>
+            <Image src={src} style={{objectFit: "contain", width: '100%', height: "100%"}}/>
           </a>
         </div>
   
@@ -90,7 +90,7 @@ export default function Home() {
       </div>
   
       <motion.div {...createAnimation(2, 0, "y", 50)} className={styles.imagine}>  
-        <h1 >Você imagina, Eu construo!</h1>
+        <h1>Projetos em Destaque</h1>
   
         <ImageLink 
           src={apaWebsite} 
@@ -105,6 +105,7 @@ export default function Home() {
         />
 
       </motion.div>
+      
 
       <motion.div>
         <motion.h1 {...createAnimation(2, 0, "y", -10)} >Conheça mais alguns dos meus projetos no meu GitHub</motion.h1>
